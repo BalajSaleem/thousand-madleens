@@ -964,11 +964,10 @@ export default function MadleensGazaLanding() {
             <div>
               <div className="flex items-center space-x-2 mb-4">
                 <img
-                  src="public/logo.jpg"
+                  src="navbar_logo_no_bg.png"
                   alt="1000 Madleens to Gaza Logo"
-                  className="h-8 w-8 object-contain filter brightness-0 invert"
+                  className="h-24 w-auto object-contain filter brightness-0 invert"
                 />
-                <span className="text-lg font-bold">1000 Madleens</span>
               </div>
               <p className="text-gray-400 text-sm">
                 Breaking the blockade through peaceful solidarity and
