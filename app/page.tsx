@@ -39,7 +39,7 @@ import {
   Clipboard,
 } from "lucide-react";
 import Link from "next/link";
-import { RiTiktokLine } from "react-icons/ri";
+import { RiTiktokLine, RiTelegram2Line } from "react-icons/ri";
 import { toast } from "sonner";
 
 export default function MadleensGazaLanding() {
@@ -787,7 +787,7 @@ export default function MadleensGazaLanding() {
               campaign progress across all our social platforms.
             </p>
 
-            <div className="grid grid-cols-3 gap-1 sm:gap-2 mb-3 sm:mb-4">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-1 sm:gap-2 mb-3 sm:mb-4">
               <motion.a
                 href="https://tiktok.com/@thousandmadleentogaza"
                 target="_blank"
@@ -833,6 +833,22 @@ export default function MadleensGazaLanding() {
                 </span>
                 <span className="text-xs text-gray-400 hidden sm:block">
                   Behind Scenes
+                </span>
+              </motion.a>
+
+              <motion.a
+                href="https://t.me/+zSh_jAhFQZ1iNTNk"
+                target="_blank"
+                className="flex flex-col items-center p-2 sm:p-4 lg:p-6 bg-gray-800 hover:bg-gray-700 transition-colors"
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <RiTelegram2Line className="h-6 w-6 sm:h-8 sm:w-8 lg:h-12 lg:w-12 text-blue-400 mb-1 sm:mb-2 lg:mb-3" />
+                <span className="font-semibold text-xs sm:text-sm lg:text-base">
+                  Telegram
+                </span>
+                <span className="text-xs text-gray-400 hidden sm:block">
+                  Community
                 </span>
               </motion.a>
             </div>
@@ -988,26 +1004,26 @@ export default function MadleensGazaLanding() {
                 </li>
                 <li>
                   <a
-                    href="#support"
+                    href="#goals"
                     className="hover:text-green-400 transition-colors"
                   >
-                    Support
+                    Goals
                   </a>
                 </li>
                 <li>
                   <a
-                    href="#community"
+                    href="#get-involved"
                     className="hover:text-green-400 transition-colors"
                   >
-                    Community
+                    Get Involved
                   </a>
                 </li>
                 <li>
                   <a
-                    href="#contact"
+                    href="#faq"
                     className="hover:text-green-400 transition-colors"
                   >
-                    Contact
+                    FAQ
                   </a>
                 </li>
               </ul>
@@ -1018,7 +1034,8 @@ export default function MadleensGazaLanding() {
               <ul className="space-y-2 text-sm text-gray-400">
                 <li>
                   <a
-                    href="#"
+                    href="https://chuffed.org/project/138012-a-thousand-madleens-to-gaza"
+                    target="_blank"
                     className="hover:text-green-400 transition-colors"
                   >
                     Donate
@@ -1026,26 +1043,29 @@ export default function MadleensGazaLanding() {
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="https://linktr.ee/thousand.madleens"
+                    target="_blank"
                     className="hover:text-green-400 transition-colors"
                   >
-                    Volunteer
+                    Join Movement
                   </a>
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="https://t.me/+zSh_jAhFQZ1iNTNk"
+                    target="_blank"
                     className="hover:text-green-400 transition-colors"
                   >
-                    Organize
+                    Telegram
                   </a>
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="https://drive.google.com/drive/folders/1PlywKwfu7Ad4JZKzGdLuvtF8Rk3M-riu"
+                    target="_blank"
                     className="hover:text-green-400 transition-colors"
                   >
-                    Advocate
+                    Resources
                   </a>
                 </li>
               </ul>
@@ -1054,34 +1074,34 @@ export default function MadleensGazaLanding() {
             <div>
               <h4 className="font-semibold mb-4">Follow Us</h4>
               <div className="flex space-x-3">
-                <Button
-                  size="sm"
-                  variant="outline"
-                  className="border-gray-600 text-gray-400 hover:text-white hover:border-green-400 bg-transparent"
-                >
-                  <Facebook className="h-4 w-4" />
-                </Button>
-                <Button
-                  size="sm"
-                  variant="outline"
-                  className="border-gray-600 text-gray-400 hover:text-white hover:border-green-400 bg-transparent"
-                >
-                  <Twitter className="h-4 w-4" />
-                </Button>
-                <Button
-                  size="sm"
-                  variant="outline"
-                  className="border-gray-600 text-gray-400 hover:text-white hover:border-green-400 bg-transparent"
+                <a
+                  href="https://www.instagram.com/thousandmadleenstogaza/?utm_source=ig_web_button_share_sheet"
+                  target="_blank"
+                  className="border border-gray-600 text-gray-400 hover:text-white hover:border-green-400 bg-transparent rounded px-2 py-2 transition-colors"
                 >
                   <Instagram className="h-4 w-4" />
-                </Button>
-                <Button
-                  size="sm"
-                  variant="outline"
-                  className="border-gray-600 text-gray-400 hover:text-white hover:border-green-400 bg-transparent"
+                </a>
+                <a
+                  href="https://x.com/1kMadleentoGaza"
+                  target="_blank"
+                  className="border border-gray-600 text-gray-400 hover:text-white hover:border-green-400 bg-transparent rounded px-2 py-2 transition-colors"
                 >
-                  <Youtube className="h-4 w-4" />
-                </Button>
+                  <Twitter className="h-4 w-4" />
+                </a>
+                <a
+                  href="https://tiktok.com/@thousandmadleentogaza"
+                  target="_blank"
+                  className="border border-gray-600 text-gray-400 hover:text-white hover:border-green-400 bg-transparent rounded px-2 py-2 transition-colors"
+                >
+                  <RiTiktokLine className="h-4 w-4" />
+                </a>
+                <a
+                  href="https://t.me/+zSh_jAhFQZ1iNTNk"
+                  target="_blank"
+                  className="border border-gray-600 text-gray-400 hover:text-white hover:border-green-400 bg-transparent rounded px-2 py-2 transition-colors"
+                >
+                  <RiTelegram2Line className="h-4 w-4" />
+                </a>
               </div>
             </div>
           </div>
