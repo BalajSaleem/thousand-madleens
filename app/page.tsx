@@ -17,8 +17,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Badge } from "@/components/ui/badge";
 import InteractiveMap from "@/components/interactive-map";
+import NewsCarousel from "@/components/news-carousel";
 import {
   Ship,
   Heart,
@@ -47,40 +47,6 @@ export default function MadleensGazaLanding() {
 
   const campaignMessage =
     "Join the historic #1000MadleensToGaza flotilla! 🚢 Breaking the blockade through peaceful solidarity. Together we sail for justice and human rights. #FreePalestine #BreakTheBlockade";
-
-  const newsArticles = [
-    {
-      id: 1,
-      title: "THE 1000 FLOTILLA INITIATIVE TO BREAK THE SIEGE",
-      image:
-        "https://mapim.org.my/wp-content/uploads/2025/06/THE-1000-FLOTILLA-INITIATIVE-TO-BREAK-THE-SIEGE-1200x480.png",
-      description:
-        "A comprehensive look at the ambitious campaign to organize 1000 ships from around the world in solidarity with Gaza, breaking the blockade through peaceful maritime resistance.",
-      source: "MAPIM",
-      sourceIcon: MapPin,
-      badge: "Breaking News",
-      badgeColor: "bg-green-600",
-      borderColor: "border-green-200",
-      buttonColor: "border-green-600 text-green-600 hover:bg-green-50",
-      link: "https://mapim.org.my/2025/06/13/the-1000-flotilla-initiative-to-break-the-siege/",
-    },
-    {
-      id: 2,
-      title:
-        "A Thousand Madleens: New Civilian Fleet Readies to Defy Israeli Blockade",
-      image:
-        "https://qudsnen.co/wp-content/uploads/2025/06/IMG_5537-780x432.jpeg",
-      description:
-        "International civil society prepares an unprecedented maritime flotilla as civilians worldwide unite to challenge the blockade of Gaza through coordinated peaceful action.",
-      source: "Quds News",
-      sourceIcon: Globe,
-      badge: "Featured",
-      badgeColor: "bg-green-600",
-      borderColor: "border-green-200",
-      buttonColor: "border-green-600 text-green-600 hover:bg-green-50",
-      link: "https://qudsnen.co/a-thousand-madleens-new-civilian-fleet-readies-to-defy-israeli-blockade/",
-    },
-  ];
 
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
@@ -800,97 +766,8 @@ export default function MadleensGazaLanding() {
         </div>
       </section>
 
-      {/* News Section - Updated to use mapped articles */}
-      <section id="news" className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <motion.div
-            className="max-w-6xl mx-auto"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">
-                Latest News
-              </h2>
-              <p className="text-lg text-gray-700">
-                Stay updated with the latest developments in our mission to Gaza
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              {newsArticles.map((article, index) => {
-                const SourceIcon = article.sourceIcon;
-                const isExternal = article.link.startsWith("http");
-
-                return (
-                  <motion.div
-                    key={article.id}
-                    initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8, delay: 0.2 + index * 0.2 }}
-                    whileHover={{ scale: 1.02 }}
-                  >
-                    <Card
-                      className={`overflow-hidden h-full shadow-lg hover:shadow-xl transition-shadow duration-300 ${article.borderColor}`}
-                    >
-                      <div className="relative h-48 overflow-hidden">
-                        <img
-                          src={article.image}
-                          alt={article.title}
-                          className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-                        />
-                        <div className="absolute top-4 left-4">
-                          <Badge className={`${article.badgeColor} text-white`}>
-                            {article.badge}
-                          </Badge>
-                        </div>
-                      </div>
-                      <CardContent className="p-6">
-                        <h3 className="text-xl font-bold text-black mb-3 line-clamp-2">
-                          {article.title}
-                        </h3>
-                        <p className="text-gray-600 mb-4 line-clamp-3">
-                          {article.description}
-                        </p>
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center space-x-2 text-sm text-gray-500">
-                            <SourceIcon className="h-4 w-4" />
-                            <span>{article.source}</span>
-                          </div>
-                          {isExternal ? (
-                            <Link href={article.link} target="_blank">
-                              <Button
-                                variant="outline"
-                                size="sm"
-                                className={`${article.buttonColor} bg-transparent`}
-                              >
-                                Read More
-                                <ExternalLink className="ml-2 h-4 w-4" />
-                              </Button>
-                            </Link>
-                          ) : (
-                            <Button
-                              variant="outline"
-                              size="sm"
-                              className={`${article.buttonColor} bg-transparent`}
-                            >
-                              Read More
-                              <ExternalLink className="ml-2 h-4 w-4" />
-                            </Button>
-                          )}
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      {/* News Section */}
+      <NewsCarousel />
 
       {/* Social Media Section - Moved to Bottom */}
       <section className="py-8 sm:py-16 bg-black text-white">
