@@ -3,8 +3,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import {
   Card,
   CardContent,
@@ -25,11 +23,8 @@ import {
   Ship,
   Heart,
   Users,
-  DollarSign,
-  Share2,
   Megaphone,
   Mail,
-  Phone,
   MapPin,
   Facebook,
   Twitter,
@@ -41,11 +36,17 @@ import {
   HandHeart,
   MessageSquare,
   AlertTriangle,
+  Clipboard,
 } from "lucide-react";
 import Link from "next/link";
+import { RiTiktokLine } from "react-icons/ri";
+import { toast } from "sonner";
 
 export default function MadleensGazaLanding() {
   const [activeRole, setActiveRole] = useState("sailors");
+
+  const campaignMessage =
+    "Join the historic #1000MadleensToGaza flotilla! 🚢 Breaking the blockade through peaceful solidarity. Together we sail for justice and human rights. #FreePalestine #BreakTheBlockade";
 
   const newsArticles = [
     {
@@ -74,34 +75,26 @@ export default function MadleensGazaLanding() {
       source: "Quds News",
       sourceIcon: Globe,
       badge: "Featured",
-      badgeColor: "bg-red-600",
-      borderColor: "border-red-200",
-      buttonColor: "border-red-600 text-red-600 hover:bg-red-50",
+      badgeColor: "bg-green-600",
+      borderColor: "border-green-200",
+      buttonColor: "border-green-600 text-green-600 hover:bg-green-50",
       link: "https://qudsnen.co/a-thousand-madleens-new-civilian-fleet-readies-to-defy-israeli-blockade/",
     },
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white overflow-x-hidden">
       {/* Header */}
-      <motion.header
-        className="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50"
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center space-x-3">
+      <header className="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
+        <div className="w-full max-w-7xl mx-auto px-4 py-1 flex items-center justify-between">
+          <div className="flex items-center space-x-3 flex-shrink-0">
             <img
-              src="/logo.jpg"
+              src="/navbar_logo_no_bg.png"
               alt="1000 Madleens to Gaza Logo"
-              className="h-10 w-10 object-contain"
+              className="h-20 w-auto object-contain"
             />
-            <span className="text-xl font-bold text-black">
-              1000 Madleens to Gaza
-            </span>
           </div>
-          <nav className="hidden md:flex space-x-12">
+          <nav className="hidden md:flex space-x-8 flex-1 justify-center">
             <a
               href="#mission"
               className="text-gray-700 font-bold hover:text-green-600 transition-colors"
@@ -109,34 +102,54 @@ export default function MadleensGazaLanding() {
               Mission
             </a>
             <a
-              href="#support"
+              href="#goals"
               className="text-gray-700 font-bold hover:text-green-600 transition-colors"
             >
-              Support
+              Goals
             </a>
             <a
-              href="#community"
+              href="#get-involved"
               className="text-gray-700 font-bold hover:text-green-600 transition-colors"
             >
-              Community
+              Get Involved
             </a>
             <a
-              href="#contact"
+              href="#news"
               className="text-gray-700 font-bold hover:text-green-600 transition-colors"
             >
-              Contact
+              News
+            </a>
+            <a
+              href="#faq"
+              className="text-gray-700 font-bold hover:text-green-600 transition-colors"
+            >
+              FAQ
             </a>
           </nav>
-          <Link target="_blank" href={"linktr.ee/thousand.madleens"}>
-            <Button className="bg-green-600 hover:bg-green-700 text-white">
-              Join the Movement
-            </Button>
-          </Link>
+          <div className="flex items-center space-x-2">
+            <Link target="_blank" href="https://linktr.ee/thousand.madleens">
+              <Button className="bg-green-600 hover:bg-green-700 text-white text-xs sm:text-sm px-3 py-2 whitespace-nowrap">
+                <span className="hidden sm:inline">Join the Movement</span>
+                <span className="sm:hidden">Join</span>
+              </Button>
+            </Link>
+            <Link
+              target="_blank"
+              href="https://chuffed.org/project/138012-a-thousand-madleens-to-gaza"
+            >
+              <Button className="bg-green-600 hover:bg-green-700 text-white text-xs sm:text-sm px-3 py-2 whitespace-nowrap">
+                <span className="sm:inline">Donate</span>
+              </Button>
+            </Link>
+          </div>
         </div>
-      </motion.header>
+      </header>
 
       {/* Combined Hero/Mission Section */}
-      <section className="relative min-h-screen bg-black text-white">
+      <section
+        id="mission"
+        className="relative min-h-screen bg-black text-white"
+      >
         {/* Banner Image Background */}
         <div className="absolute inset-0">
           <img
@@ -262,7 +275,7 @@ export default function MadleensGazaLanding() {
       </section>
 
       {/* Goals & Organization */}
-      <section className="pt-24 pb-16 bg-white">
+      <section id="goals" className="pt-24 pb-16 bg-white">
         <div className="container mx-auto px-4">
           <motion.div
             className="max-w-6xl mx-auto"
@@ -380,171 +393,27 @@ export default function MadleensGazaLanding() {
                   coordinate with the international fleet.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button className="bg-green-600 hover:bg-green-700">
-                    <Ship className="mr-2 h-4 w-4" />
-                    Register Departure Point
-                  </Button>
-                  <Button
-                    variant="outline"
-                    className="border-red-600 text-red-600 hover:bg-red-50 bg-transparent"
+                  <Link
+                    href="https://thousandmadleensinternational.gogocarto.fr/map#/carte/@46.32,-0.68,6z?cat=all"
+                    target="_blank"
                   >
-                    <MapPin className="mr-2 h-4 w-4" />
-                    View All Locations
-                  </Button>
+                    <Button className="bg-green-600 hover:bg-green-700">
+                      <Ship className="mr-2 h-4 w-4" />
+                      Register Departure Point
+                    </Button>
+                  </Link>
+                  <Link
+                    href="https://thousandmadleensinternational.gogocarto.fr/map#/carte/@46.32,-0.68,6z?cat=all"
+                    target="_blank"
+                  >
+                    <Button className="bg-green-600 hover:bg-green-700">
+                      <MapPin className="mr-2 h-4 w-4" />
+                      View All Locations
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </motion.div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Financial Support */}
-      <section id="support" className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <motion.div
-            className="max-w-4xl mx-auto"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">
-                Support the Mission
-              </h2>
-              <p className="text-lg text-gray-700">
-                Your financial support helps fund ships, supplies, and
-                coordination efforts for this historic flotilla.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              <Card className="border-green-200">
-                <CardHeader>
-                  <CardTitle className="text-green-700">
-                    Direct Donations
-                  </CardTitle>
-                  <CardDescription>
-                    Support the flotilla organization directly
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <Button className="w-full bg-green-600 hover:bg-green-700">
-                    <DollarSign className="mr-2 h-4 w-4" />
-                    Donate Now
-                  </Button>
-                  <Button
-                    variant="outline"
-                    className="w-full border-green-600 text-green-600 bg-transparent"
-                  >
-                    <ExternalLink className="mr-2 h-4 w-4" />
-                    PayPal Donation
-                  </Button>
-                  <Button
-                    variant="outline"
-                    className="w-full border-green-600 text-green-600 bg-transparent"
-                  >
-                    <ExternalLink className="mr-2 h-4 w-4" />
-                    Bank Transfer
-                  </Button>
-                </CardContent>
-              </Card>
-
-              <Card className="border-red-200">
-                <CardHeader>
-                  <CardTitle className="text-red-700">Sponsor a Ship</CardTitle>
-                  <CardDescription>
-                    Help fund an entire vessel for the flotilla
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="text-center p-4 bg-red-50">
-                    <p className="text-2xl font-bold text-red-700">$50,000</p>
-                    <p className="text-sm text-gray-600">
-                      Average cost per ship
-                    </p>
-                  </div>
-                  <Button className="w-full bg-red-600 hover:bg-red-700">
-                    <Ship className="mr-2 h-4 w-4" />
-                    Sponsor a Ship
-                  </Button>
-                  <Button
-                    variant="outline"
-                    className="w-full border-red-600 text-red-600 bg-transparent"
-                  >
-                    <Users className="mr-2 h-4 w-4" />
-                    Group Sponsorship
-                  </Button>
-                </CardContent>
-              </Card>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Community */}
-      <section id="community" className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <motion.div
-            className="max-w-6xl mx-auto"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">
-                Join Our Community
-              </h2>
-              <p className="text-lg text-gray-700">
-                Connect with supporters worldwide, organize local events, and
-                amplify our message.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center">
-                    <Users className="mr-2 h-5 w-5 text-green-600" />
-                    Organize Groups
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <p className="text-gray-700">
-                    Start local support groups and organize fundraising events
-                    in your community.
-                  </p>
-                  <Button className="w-full bg-green-600 hover:bg-green-700">
-                    Start a Local Group
-                  </Button>
-                  <Button variant="outline" className="w-full bg-transparent">
-                    Find Groups Near You
-                  </Button>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center">
-                    <MessageSquare className="mr-2 h-5 w-5 text-red-600" />
-                    Community Events
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <p className="text-gray-700">
-                    Organize solidarity events and fundraising activities in
-                    your area.
-                  </p>
-                  <Button className="w-full bg-red-600 hover:bg-red-700">
-                    Plan an Event
-                  </Button>
-                  <Button variant="outline" className="w-full bg-transparent">
-                    View Upcoming Events
-                  </Button>
-                </CardContent>
-              </Card>
-            </div>
           </motion.div>
         </div>
       </section>
@@ -594,7 +463,7 @@ export default function MadleensGazaLanding() {
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center">
-                    <MessageSquare className="mr-2 h-5 w-5 text-red-600" />
+                    <MessageSquare className="mr-2 h-5 w-5 text-green-600" />
                     Letter Templates
                   </CardTitle>
                 </CardHeader>
@@ -603,7 +472,7 @@ export default function MadleensGazaLanding() {
                     Pre-written letters to government officials and
                     international bodies.
                   </p>
-                  <Button className="w-full bg-red-600 hover:bg-red-700">
+                  <Button className="w-full bg-green-600 hover:bg-green-700">
                     Download Letters
                   </Button>
                   <Button variant="outline" className="w-full bg-transparent">
@@ -617,7 +486,7 @@ export default function MadleensGazaLanding() {
       </section>
 
       {/* Roles Section */}
-      <section className="py-16 bg-white">
+      <section id="get-involved" className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <motion.div
             className="max-w-6xl mx-auto"
@@ -682,9 +551,14 @@ export default function MadleensGazaLanding() {
                         </ul>
                       </div>
                     </div>
-                    <Button className="mt-6 bg-green-600 hover:bg-green-700">
-                      Apply as Sailor
-                    </Button>
+                    <Link
+                      href="https://cryptpad.fr/form/#/2/form/view/7m7vHUcI3SSjvTUM5Jckhlgta5egIyZIGbYIZN1cbgo/"
+                      target="_blank"
+                    >
+                      <Button className="mt-6 bg-green-600 hover:bg-green-700">
+                        Apply as Sailor
+                      </Button>
+                    </Link>
                   </CardContent>
                 </Card>
               </TabsContent>
@@ -692,7 +566,7 @@ export default function MadleensGazaLanding() {
               <TabsContent value="navigators" className="mt-8">
                 <Card>
                   <CardHeader>
-                    <CardTitle className="flex items-center text-red-700">
+                    <CardTitle className="flex items-center text-green-700">
                       <Anchor className="mr-2 h-5 w-5" />
                       Navigators & Technical
                     </CardTitle>
@@ -723,9 +597,14 @@ export default function MadleensGazaLanding() {
                         </ul>
                       </div>
                     </div>
-                    <Button className="mt-6 bg-red-600 hover:bg-red-700">
-                      Apply as Navigator
-                    </Button>
+                    <Link
+                      href="https://cryptpad.fr/form/#/2/form/view/7m7vHUcI3SSjvTUM5Jckhlgta5egIyZIGbYIZN1cbgo/"
+                      target="_blank"
+                    >
+                      <Button className="mt-6 bg-green-600 hover:bg-green-700">
+                        Apply as Navigator
+                      </Button>
+                    </Link>
                   </CardContent>
                 </Card>
               </TabsContent>
@@ -764,9 +643,14 @@ export default function MadleensGazaLanding() {
                         </ul>
                       </div>
                     </div>
-                    <Button className="mt-6 bg-black hover:bg-gray-800 text-white">
-                      Apply as Official
-                    </Button>
+                    <Link
+                      href="https://cryptpad.fr/form/#/2/form/view/7m7vHUcI3SSjvTUM5Jckhlgta5egIyZIGbYIZN1cbgo/"
+                      target="_blank"
+                    >
+                      <Button className="mt-6 bg-black hover:bg-gray-800 text-white">
+                        Apply as Official
+                      </Button>
+                    </Link>
                   </CardContent>
                 </Card>
               </TabsContent>
@@ -803,9 +687,11 @@ export default function MadleensGazaLanding() {
                         </ul>
                       </div>
                     </div>
-                    <Button className="mt-6 bg-green-600 hover:bg-green-700">
-                      Join as Supporter
-                    </Button>
+                    <Link href="https://t.me/+zSh_jAhFQZ1iNTNk" target="_blank">
+                      <Button className="mt-6 bg-green-600 hover:bg-green-700">
+                        Join as Supporter
+                      </Button>
+                    </Link>
                   </CardContent>
                 </Card>
               </TabsContent>
@@ -815,7 +701,7 @@ export default function MadleensGazaLanding() {
       </section>
 
       {/* FAQ */}
-      <section className="py-16 bg-gray-50">
+      <section id="faq" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <motion.div
             className="max-w-4xl mx-auto"
@@ -915,7 +801,7 @@ export default function MadleensGazaLanding() {
       </section>
 
       {/* News Section - Updated to use mapped articles */}
-      <section className="py-16 bg-white">
+      <section id="news" className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <motion.div
             className="max-w-6xl mx-auto"
@@ -1006,105 +892,8 @@ export default function MadleensGazaLanding() {
         </div>
       </section>
 
-      {/* Contact */}
-      <section id="contact" className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <motion.div
-            className="max-w-4xl mx-auto"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">
-                Contact Us
-              </h2>
-              <p className="text-lg text-gray-700">
-                Get in touch with our campaign coordinators and support team.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Send a Message</CardTitle>
-                  <CardDescription>
-                    We'll get back to you within 24 hours
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="grid grid-cols-2 gap-4">
-                    <Input placeholder="First Name" />
-                    <Input placeholder="Last Name" />
-                  </div>
-                  <Input type="email" placeholder="Email Address" />
-                  <Input placeholder="Subject" />
-                  <Textarea
-                    placeholder="Your message..."
-                    className="min-h-[120px]"
-                  />
-                  <Button className="w-full bg-green-600 hover:bg-green-700">
-                    <Mail className="mr-2 h-4 w-4" />
-                    Send Message
-                  </Button>
-                </CardContent>
-              </Card>
-
-              <div className="space-y-6">
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="flex items-center">
-                      <Mail className="mr-2 h-5 w-5 text-green-600" />
-                      Email
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-gray-700">info@1000madleens.org</p>
-                    <p className="text-gray-700">press@1000madleens.org</p>
-                  </CardContent>
-                </Card>
-
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="flex items-center">
-                      <Phone className="mr-2 h-5 w-5 text-red-600" />
-                      Phone
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-gray-700">+1 (555) 123-4567</p>
-                    <p className="text-sm text-gray-500">
-                      International Coordination
-                    </p>
-                  </CardContent>
-                </Card>
-
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="flex items-center">
-                      <MapPin className="mr-2 h-5 w-5 text-black" />
-                      Address
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-gray-700">
-                      International Coordination Office
-                      <br />
-                      123 Maritime Way
-                      <br />
-                      Global City, GC 12345
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
       {/* Social Media Section - Moved to Bottom */}
-      <section className="py-16 bg-black text-white">
+      <section className="py-8 sm:py-16 bg-black text-white">
         <div className="container mx-auto px-4">
           <motion.div
             className="max-w-4xl mx-auto text-center"
@@ -1113,93 +902,119 @@ export default function MadleensGazaLanding() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-6">
               Follow Our Journey
             </h2>
-            <p className="text-xl text-gray-300 mb-8">
+            <p className="text-base sm:text-xl text-gray-300 mb-4 sm:mb-8">
               Stay updated with the latest news, ship registrations, and
               campaign progress across all our social platforms.
             </p>
 
-            <div className="grid md:grid-cols-4 gap-6 mb-8">
+            <div className="grid grid-cols-3 gap-1 sm:gap-2 mb-3 sm:mb-4">
               <motion.a
-                href="#"
-                className="flex flex-col items-center p-6 bg-gray-800 hover:bg-gray-700 transition-colors"
+                href="https://tiktok.com/@thousandmadleentogaza"
+                target="_blank"
+                className="flex flex-col items-center p-2 sm:p-4 lg:p-6 bg-gray-800 hover:bg-gray-700 transition-colors"
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <Facebook className="h-12 w-12 text-blue-400 mb-3" />
-                <span className="font-semibold">Facebook</span>
-                <span className="text-sm text-gray-400">Daily Updates</span>
+                <RiTiktokLine className="h-6 w-6 sm:h-8 sm:w-8 lg:h-12 lg:w-12 text-black-400 mb-1 sm:mb-2 lg:mb-3" />
+                <span className="font-semibold text-xs sm:text-sm lg:text-base">
+                  TikTok
+                </span>
+                <span className="text-xs text-gray-400 hidden sm:block">
+                  Short Videos
+                </span>
               </motion.a>
 
               <motion.a
-                href="#"
-                className="flex flex-col items-center p-6 bg-gray-800 hover:bg-gray-700 transition-colors"
+                href="https://x.com/1kMadleentoGaza"
+                className="flex flex-col items-center p-2 sm:p-4 lg:p-6 bg-gray-800 hover:bg-gray-700 transition-colors"
                 whileHover={{ scale: 1.05 }}
+                target="_blank"
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <Link
-                  href="https://x.com/1kMadleentoGaza"
-                  target="_blank"
-                  className="flex flex-col items-center"
-                >
-                  <Twitter className="h-12 w-12 text-blue-400 mb-3" />
-                  <span className="font-semibold">Twitter</span>
-                  <span className="text-sm text-gray-400">Live Updates</span>
-                </Link>
+                <Twitter className="h-6 w-6 sm:h-8 sm:w-8 lg:h-12 lg:w-12 text-blue-400 mb-1 sm:mb-2 lg:mb-3" />
+                <span className="font-semibold text-xs sm:text-sm lg:text-base">
+                  Twitter
+                </span>
+                <span className="text-xs text-gray-400 hidden sm:block">
+                  Live Updates
+                </span>
               </motion.a>
 
               <motion.a
-                href="#"
-                className="flex flex-col items-center p-6 bg-gray-800 hover:bg-gray-700 transition-colors"
+                href="https://www.instagram.com/thousandmadleenstogaza/?utm_source=ig_web_button_share_sheet"
+                target="_blank"
+                className="flex flex-col items-center p-2 sm:p-4 lg:p-6 bg-gray-800 hover:bg-gray-700 transition-colors"
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <Link
-                  href="https://www.instagram.com/thousandmadleenstogaza/?utm_source=ig_web_button_share_sheet"
-                  target="_blank"
-                  className="flex flex-col items-center"
-                >
-                  <Instagram className="h-12 w-12 text-pink-400 mb-3" />
-                  <span className="font-semibold">Instagram</span>
-                  <span className="text-sm text-gray-400">Behind Scenes</span>
-                </Link>
-              </motion.a>
-
-              <motion.a
-                href="#"
-                className="flex flex-col items-center p-6 bg-gray-800 hover:bg-gray-700 transition-colors"
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <Youtube className="h-12 w-12 text-red-400 mb-3" />
-                <span className="font-semibold">YouTube</span>
-                <span className="text-sm text-gray-400">Documentaries</span>
+                <Instagram className="h-6 w-6 sm:h-8 sm:w-8 lg:h-12 lg:w-12 text-pink-400 mb-1 sm:mb-2 lg:mb-3" />
+                <span className="font-semibold text-xs sm:text-sm lg:text-base">
+                  Instagram
+                </span>
+                <span className="text-xs text-gray-400 hidden sm:block">
+                  Behind Scenes
+                </span>
               </motion.a>
             </div>
 
-            <div className="bg-gray-800 p-6">
-              <h3 className="text-xl font-bold mb-4">Share Our Mission</h3>
-              <div className="bg-gray-700 p-4 mb-4">
-                <p className="text-sm text-gray-300 italic">
-                  "Join the historic #1000MadleensToGaza flotilla! 🚢 Breaking
-                  the blockade through peaceful solidarity. Together we sail for
-                  justice and human rights. #FreePalestine #BreakTheBlockade"
+            <div className="bg-gray-800 p-3 sm:p-4 lg:p-6">
+              <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-4">
+                Share Our Mission
+              </h3>
+              <div className="bg-gray-700 p-2 sm:p-3 lg:p-4 mb-2 sm:mb-4">
+                <p
+                  className="text-xs sm:text-sm text-gray-300 italic"
+                  id="campaign-message"
+                >
+                  "{campaignMessage}"
                 </p>
               </div>
-              <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                <Button className="bg-green-600 hover:bg-green-700">
-                  <Share2 className="mr-2 h-4 w-4" />
-                  Copy Message
+              <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 justify-center">
+                <Button
+                  className="bg-green-600 hover:bg-green-700 text-xs sm:text-sm px-3 py-2"
+                  onClick={async () => {
+                    await navigator.clipboard.writeText(campaignMessage);
+                    toast.success("Message copied to clipboard!");
+                  }}
+                >
+                  <Clipboard className="mr-1 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4" />
+                  <span className="hidden sm:inline">Copy Message</span>
+                  <span className="sm:hidden">Copy</span>
                 </Button>
                 <Button
                   variant="outline"
-                  className="border-white text-white hover:bg-white hover:text-black bg-transparent"
+                  className="border-white text-white hover:bg-white hover:text-black bg-transparent text-xs sm:text-sm px-3 py-2"
+                  onClick={() => {
+                    const subject = encodeURIComponent(
+                      "Join the 1000 Madleens to Gaza Campaign"
+                    );
+                    const body = encodeURIComponent(
+                      `${campaignMessage}\n\nLearn more and get involved: ${window.location.href}`
+                    );
+                    window.open(`mailto:?subject=${subject}&body=${body}`);
+                    toast.info("Email client opened");
+                  }}
                 >
-                  <ExternalLink className="mr-2 h-4 w-4" />
-                  Download Graphics
+                  <Mail className="mr-1 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4" />
+                  <span className="hidden sm:inline">Share via Email</span>
+                  <span className="sm:hidden">Email</span>
                 </Button>
+                <Link
+                  href="https://drive.google.com/drive/folders/1PlywKwfu7Ad4JZKzGdLuvtF8Rk3M-riu"
+                  target="_blank"
+                >
+                  <Button
+                    variant="outline"
+                    className="border-white text-white hover:bg-white hover:text-black bg-transparent text-xs sm:text-sm px-3 py-2"
+                  >
+                    <ExternalLink className="mr-1 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4" />
+                    <span className="hidden sm:inline">Download Graphics</span>
+                    <span className="sm:hidden">Graphics</span>
+                  </Button>
+                </Link>
               </div>
             </div>
           </motion.div>
@@ -1207,7 +1022,7 @@ export default function MadleensGazaLanding() {
       </section>
 
       {/* Disclaimer */}
-      <section className="py-16 bg-red-50">
+      <section className="py-16 bg-green-50">
         <div className="container mx-auto px-4">
           <motion.div
             className="max-w-4xl mx-auto"
@@ -1222,9 +1037,9 @@ export default function MadleensGazaLanding() {
               </h2>
             </div>
 
-            <Card className="border-red-200">
+            <Card className="border-green-200">
               <CardHeader>
-                <CardTitle className="flex items-center text-red-700">
+                <CardTitle className="flex items-center text-green-700">
                   <AlertTriangle className="mr-2 h-5 w-5" />
                   Legal and Safety Notice
                 </CardTitle>
@@ -1326,22 +1141,34 @@ export default function MadleensGazaLanding() {
               <h4 className="font-semibold mb-4">Get Involved</h4>
               <ul className="space-y-2 text-sm text-gray-400">
                 <li>
-                  <a href="#" className="hover:text-red-400 transition-colors">
+                  <a
+                    href="#"
+                    className="hover:text-green-400 transition-colors"
+                  >
                     Donate
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-red-400 transition-colors">
+                  <a
+                    href="#"
+                    className="hover:text-green-400 transition-colors"
+                  >
                     Volunteer
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-red-400 transition-colors">
+                  <a
+                    href="#"
+                    className="hover:text-green-400 transition-colors"
+                  >
                     Organize
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-red-400 transition-colors">
+                  <a
+                    href="#"
+                    className="hover:text-green-400 transition-colors"
+                  >
                     Advocate
                   </a>
                 </li>
