@@ -5,13 +5,12 @@ import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { MapPin, Navigation, Ship, Globe } from "lucide-react";
+import { Navigation, Ship, Globe } from "lucide-react";
 
 const locations = [
   {
     id: 1,
     country: "United Kingdom",
-    port: "Portsmouth",
     ships: 0,
     status: "Organizing",
     statusColor: "bg-green-100 text-green-800",
@@ -22,7 +21,6 @@ const locations = [
   {
     id: 2,
     country: "France",
-    port: "Marseille",
     ships: 5,
     status: "Preparing",
     statusColor: "bg-blue-100 text-blue-800",
@@ -33,7 +31,6 @@ const locations = [
   {
     id: 3,
     country: "Malaysia",
-    port: "Port Klang",
     ships: 0,
     status: "Planning",
     statusColor: "bg-yellow-100 text-yellow-800",
@@ -44,7 +41,6 @@ const locations = [
   {
     id: 4,
     country: "Turkey",
-    port: "Istanbul",
     ships: 0,
     status: "Ready",
     statusColor: "bg-green-100 text-green-800",
@@ -55,7 +51,6 @@ const locations = [
   {
     id: 5,
     country: "Spain",
-    port: "Barcelona",
     ships: 0,
     status: "Organizing",
     statusColor: "bg-yellow-100 text-yellow-800",
@@ -66,7 +61,6 @@ const locations = [
   {
     id: 6,
     country: "Norway",
-    port: "Oslo",
     ships: 0,
     status: "Planning",
     statusColor: "bg-blue-100 text-blue-800",
@@ -134,13 +128,7 @@ export default function InteractiveMap() {
               </CardHeader>
               <CardContent>
                 <div className="space-y-3 text-sm">
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-600 flex items-center">
-                      <MapPin className="h-3 w-3 mr-1" />
-                      Departure Port:
-                    </span>
-                    <span className="font-medium">{location.port}</span>
-                  </div>
+                  <div className="flex justify-between items-center"></div>
                   <div className="flex justify-between items-center">
                     <span className="text-gray-600 flex items-center">
                       <Ship className="h-3 w-3 mr-1" />

@@ -44,20 +44,6 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
-const fadeInUp = {
-  initial: { opacity: 0, y: 60 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6 },
-};
-
-const staggerContainer = {
-  animate: {
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-};
-
 export default function MadleensGazaLanding() {
   const [activeRole, setActiveRole] = useState("sailors");
 
@@ -115,287 +101,168 @@ export default function MadleensGazaLanding() {
               1000 Madleens to Gaza
             </span>
           </div>
-          <nav className="hidden md:flex space-x-6">
+          <nav className="hidden md:flex space-x-12">
             <a
               href="#mission"
-              className="text-gray-700 hover:text-green-600 transition-colors"
+              className="text-gray-700 font-bold hover:text-green-600 transition-colors"
             >
               Mission
             </a>
             <a
               href="#support"
-              className="text-gray-700 hover:text-green-600 transition-colors"
+              className="text-gray-700 font-bold hover:text-green-600 transition-colors"
             >
               Support
             </a>
             <a
               href="#community"
-              className="text-gray-700 hover:text-green-600 transition-colors"
+              className="text-gray-700 font-bold hover:text-green-600 transition-colors"
             >
               Community
             </a>
             <a
               href="#contact"
-              className="text-gray-700 hover:text-green-600 transition-colors"
+              className="text-gray-700 font-bold hover:text-green-600 transition-colors"
             >
               Contact
             </a>
           </nav>
           <Link target="_blank" href={"linktr.ee/thousand.madleens"}>
-            <Button className="bg-red-600 hover:bg-red-700 text-white">
+            <Button className="bg-green-600 hover:bg-green-700 text-white">
               Join the Movement
             </Button>
           </Link>
         </div>
       </motion.header>
 
-      {/* Banner Image - Made Taller */}
-      <section className="relative h-[60vh] md:h-[70vh] lg:h-[80vh] overflow-hidden">
+      {/* Combined Hero/Mission Section */}
+      <section className="relative min-h-screen bg-black text-white">
+        {/* Banner Image Background */}
         <div className="absolute inset-0">
           <img
             src="thousand-madleens-banner.jpg"
             alt="Sailboat with Palestinian flag sailing on the Mediterranean Sea - 1000 Madleens to Gaza campaign"
-            // className="w-full h-full object-cover object-center"
-            className="w-full h-full object-cover object-top"
-            // style={{ objectPosition: "0% -200%" }}
+            className="w-full h-full object-cover object-top opacity-40"
           />
-          <div className="absolute inset-0 bg-black/30"></div>
+          <div className="absolute inset-0 "></div>
         </div>
 
-        <div className="relative z-10 h-full flex items-center justify-center">
-          <motion.div
-            className="text-center text-white px-4"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.5 }}
-          >
-            <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 drop-shadow-lg">
-              Breaking the Blockade
-            </h2>
-            <p className="text-xl md:text-2xl lg:text-3xl drop-shadow-lg mb-6">
-              1000 Ships. One Mission. Free Gaza.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                target="_blank"
-                href="https://chuffed.org/project/138012-a-thousand-madleens-to-gaza"
-              >
-                <Button
-                  size="lg"
-                  className="bg-green-600 hover:bg-green-700 text-white"
-                >
-                  <HandHeart className="mr-2 h-5 w-5" />
-                  Support the Mission
-                </Button>
-              </Link>
-              <Link
-                target="_blank"
-                href={"https://linktr.ee/thousand.madleens"}
-              >
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-white text-white hover:bg-white hover:text-black bg-transparent"
-                >
-                  <Users className="mr-2 h-5 w-5" />
-                  Join Community
-                </Button>
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Hero Section */}
-      <section className="pt-8 pb-16 bg-gradient-to-br from-green-50 to-red-50">
-        <div className="container mx-auto px-4">
-          <motion.div
-            className="text-center max-w-4xl mx-auto"
-            variants={staggerContainer}
-            initial="initial"
-            animate="animate"
-          >
-            <motion.div variants={fadeInUp} className="mb-6">
-              <Badge className="bg-green-100 text-green-800 mb-4">
-                Breaking the Blockade
-              </Badge>
-              <h1 className="text-4xl md:text-6xl font-bold text-black mb-6">
+        <div className="relative z-10">
+          {/* Hero Content */}
+          <div className="container mx-auto px-4 pt-48 pb-16">
+            <motion.div
+              className="text-center max-w-4xl mx-auto"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.5 }}
+            >
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 drop-shadow-lg">
                 1000 Madleens to Gaza
               </h1>
-              <p className="text-xl text-gray-700 mb-8 leading-relaxed">
+              <div className="inline-block bg-black px-6 py-3 mb-8">
+                <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white">
+                  Breaking the Blockage
+                </h2>
+              </div>
+              <p className="text-xl md:text-2xl lg:text-3xl drop-shadow-lg mb-8">
+                1000 Ships. One Mission. Free Gaza.
+              </p>
+              <p className="text-lg md:text-xl text-gray-200 mb-12 leading-relaxed max-w-3xl mx-auto">
                 A global maritime flotilla campaign to break the blockade of
                 Gaza through peaceful solidarity. Inspired by resilience, driven
                 by hope, united in action.
               </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+                <Link
+                  target="_blank"
+                  href="https://chuffed.org/project/138012-a-thousand-madleens-to-gaza"
+                >
+                  <Button
+                    size="lg"
+                    className="bg-green-600 hover:bg-green-700 text-white px-8 py-4"
+                  >
+                    <HandHeart className="mr-2 h-5 w-5" />
+                    Support the Mission
+                  </Button>
+                </Link>
+                <Link
+                  target="_blank"
+                  href={"https://linktr.ee/thousand.madleens"}
+                >
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="border-white text-white hover:bg-white hover:text-black bg-transparent px-8 py-4"
+                  >
+                    <Users className="mr-2 h-5 w-5" />
+                    Join Community
+                  </Button>
+                </Link>
+              </div>
             </motion.div>
-          </motion.div>
-        </div>
-      </section>
+          </div>
 
-      {/* Social Media Section - Made More Prominent */}
-      <section className="py-16 bg-black text-white">
-        <div className="container mx-auto px-4">
-          <motion.div
-            className="max-w-4xl mx-auto text-center"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Follow Our Journey
-            </h2>
-            <p className="text-xl text-gray-300 mb-8">
-              Stay updated with the latest news, ship registrations, and
-              campaign progress across all our social platforms.
-            </p>
-
-            <div className="grid md:grid-cols-4 gap-6 mb-8">
-              <motion.a
-                href="#"
-                className="flex flex-col items-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors"
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <Facebook className="h-12 w-12 text-blue-400 mb-3" />
-                <span className="font-semibold">Facebook</span>
-                <span className="text-sm text-gray-400">Daily Updates</span>
-              </motion.a>
-
-              <motion.a
-                href="#"
-                className="flex flex-col items-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors"
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <Link
-                  href="https://x.com/1kMadleentoGaza"
-                  target="_blank"
-                  className="flex flex-col items-center"
-                >
-                  <Twitter className="h-12 w-12 text-blue-400 mb-3" />
-                  <span className="font-semibold">Twitter</span>
-                  <span className="text-sm text-gray-400">Live Updates</span>
-                </Link>
-              </motion.a>
-
-              <motion.a
-                href="#"
-                className="flex flex-col items-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors"
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <Link
-                  href="https://www.instagram.com/thousandmadleenstogaza/?utm_source=ig_web_button_share_sheet"
-                  target="_blank"
-                  className="flex flex-col items-center"
-                >
-                  <Instagram className="h-12 w-12 text-pink-400 mb-3" />
-                  <span className="font-semibold">Instagram</span>
-                  <span className="text-sm text-gray-400">Behind Scenes</span>
-                </Link>
-              </motion.a>
-
-              <motion.a
-                href="#"
-                className="flex flex-col items-center p-6 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors"
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <Youtube className="h-12 w-12 text-red-400 mb-3" />
-                <span className="font-semibold">YouTube</span>
-                <span className="text-sm text-gray-400">Documentaries</span>
-              </motion.a>
-            </div>
-
-            <div className="bg-gray-800 rounded-lg p-6">
-              <h3 className="text-xl font-bold mb-4">Share Our Mission</h3>
-              <div className="bg-gray-700 p-4 rounded-lg mb-4">
-                <p className="text-sm text-gray-300 italic">
-                  "Join the historic #1000MadleensToGaza flotilla! 🚢 Breaking
-                  the blockade through peaceful solidarity. Together we sail for
-                  justice and human rights. #FreePalestine #BreakTheBlockade"
+          {/* Mission Cards at Bottom - Leaking out of section */}
+          <div className="container mx-auto px-4 pb-0 pt-12">
+            <motion.div
+              className="max-w-4xl mx-auto"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-black text-white mb-6">
+                  Our Mission
+                </h2>
+                <p className="text-lg text-gray-200">
+                  A tribute to the resilience and patience of the people of
+                  Gaza, and a collective movement to stand alongside them.
                 </p>
               </div>
-              <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                <Button className="bg-green-600 hover:bg-green-700">
-                  <Share2 className="mr-2 h-4 w-4" />
-                  Copy Message
-                </Button>
-                <Button
-                  variant="outline"
-                  className="border-white text-white hover:bg-white hover:text-black bg-transparent"
-                >
-                  <ExternalLink className="mr-2 h-4 w-4" />
-                  Download Graphics
-                </Button>
+
+              <div className="grid md:grid-cols-2 gap-8 transform translate-y-8">
+                <Card className="bg-black border-green-600 border-2 shadow-2xl">
+                  <CardHeader>
+                    <CardTitle className="flex items-center text-green-400 text-xl">
+                      <Heart className="mr-2 h-6 w-6" />
+                      Tribute to Resilience
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-gray-200">
+                      The "Madleen" represents the unwavering spirit of the
+                      Palestinians who refuse to accept injustice. Our campaign
+                      honors the courage of all who have sailed these waters
+                      before us, carrying hope across the Mediterranean.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="bg-black border-green-600 border-2 shadow-2xl">
+                  <CardHeader>
+                    <CardTitle className="flex items-center text-green-400 text-xl">
+                      <Globe className="mr-2 h-6 w-6" />
+                      Global Solidarity
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-gray-200">
+                      From every corner of the world, we unite in peaceful
+                      resistance. 1000 ships from many nations will converge to
+                      break the Israeli genocidal blockade through the power of
+                      international civil society.
+                    </p>
+                  </CardContent>
+                </Card>
               </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Mission Section */}
-      <section id="mission" className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <motion.div
-            className="max-w-4xl mx-auto"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">
-                Our Mission
-              </h2>
-              <p className="text-lg text-gray-700">
-                A tribute to the resilience and patience of the people of Gaza,
-                and a collective movement to stand alongside them.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8 mb-12">
-              <Card className="border-green-200">
-                <CardHeader>
-                  <CardTitle className="flex items-center text-green-700">
-                    <Heart className="mr-2 h-5 w-5" />
-                    Tribute to Resilience
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-700">
-                    The "Madleen" represents the unwavering spirit of the
-                    Palestinians who refuse to accept injustice. Our campaign
-                    honors the courage of all who have sailed these waters
-                    before us, carrying hope across the Mediterranean.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="border-red-200">
-                <CardHeader>
-                  <CardTitle className="flex items-center text-red-700">
-                    <Globe className="mr-2 h-5 w-5" />
-                    Global Solidarity
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-700">
-                    From every corner of the world, we unite in peaceful
-                    resistance. 1000 ships from many nations will converge to
-                    break the Israeli genocidal blockade through the power of
-                    international civil society.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Goals & Organization */}
-      <section className="py-16 bg-gray-50">
+      <section className="pt-24 pb-16 bg-white">
         <div className="container mx-auto px-4">
           <motion.div
             className="max-w-6xl mx-auto"
@@ -404,8 +271,8 @@ export default function MadleensGazaLanding() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-black text-green-600 mb-6">
                 Goals & Organization
               </h2>
               <p className="text-lg text-gray-700 max-w-3xl mx-auto">
@@ -414,16 +281,16 @@ export default function MadleensGazaLanding() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-3 gap-12">
               <motion.div
                 className="text-center"
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Ship className="h-8 w-8 text-green-600" />
+                <div className="flex items-center justify-center mx-auto mb-6">
+                  <Ship className="h-16 w-16 text-green-600" />
                 </div>
-                <h3 className="text-xl font-semibold text-black mb-3">
+                <h3 className="text-2xl md:text-3xl font-black text-green-600 mb-4">
                   Maritime Flotilla
                 </h3>
                 <p className="text-gray-700">
@@ -438,10 +305,10 @@ export default function MadleensGazaLanding() {
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <div className="bg-red-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Anchor className="h-8 w-8 text-red-600" />
+                <div className="flex items-center justify-center mx-auto mb-6">
+                  <Anchor className="h-16 w-16 text-green-600" />
                 </div>
-                <h3 className="text-xl font-semibold text-black mb-3">
+                <h3 className="text-2xl md:text-3xl font-black text-green-600 mb-4">
                   Break the Blockade
                 </h3>
                 <p className="text-gray-700">
@@ -456,10 +323,10 @@ export default function MadleensGazaLanding() {
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <div className="bg-black w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Users className="h-8 w-8 text-white" />
+                <div className="flex items-center justify-center mx-auto mb-6">
+                  <Users className="h-16 w-16 text-green-600" />
                 </div>
-                <h3 className="text-xl font-semibold text-black mb-3">
+                <h3 className="text-2xl md:text-3xl font-black text-green-600 mb-4">
                   Global Unity
                 </h3>
                 <p className="text-gray-700">
@@ -503,7 +370,7 @@ export default function MadleensGazaLanding() {
               viewport={{ once: true }}
               transition={{ delay: 0.5 }}
             >
-              <div className="bg-gradient-to-r from-green-50 to-red-50 rounded-lg p-8">
+              <div className=" p-8">
                 <h3 className="text-2xl font-bold text-black mb-4">
                   Join the Global Fleet
                 </h3>
@@ -591,7 +458,7 @@ export default function MadleensGazaLanding() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <div className="text-center p-4 bg-red-50 rounded-lg">
+                  <div className="text-center p-4 bg-red-50">
                     <p className="text-2xl font-bold text-red-700">$50,000</p>
                     <p className="text-sm text-gray-600">
                       Average cost per ship
@@ -1230,6 +1097,109 @@ export default function MadleensGazaLanding() {
                     </p>
                   </CardContent>
                 </Card>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Social Media Section - Moved to Bottom */}
+      <section className="py-16 bg-black text-white">
+        <div className="container mx-auto px-4">
+          <motion.div
+            className="max-w-4xl mx-auto text-center"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Follow Our Journey
+            </h2>
+            <p className="text-xl text-gray-300 mb-8">
+              Stay updated with the latest news, ship registrations, and
+              campaign progress across all our social platforms.
+            </p>
+
+            <div className="grid md:grid-cols-4 gap-6 mb-8">
+              <motion.a
+                href="#"
+                className="flex flex-col items-center p-6 bg-gray-800 hover:bg-gray-700 transition-colors"
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <Facebook className="h-12 w-12 text-blue-400 mb-3" />
+                <span className="font-semibold">Facebook</span>
+                <span className="text-sm text-gray-400">Daily Updates</span>
+              </motion.a>
+
+              <motion.a
+                href="#"
+                className="flex flex-col items-center p-6 bg-gray-800 hover:bg-gray-700 transition-colors"
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <Link
+                  href="https://x.com/1kMadleentoGaza"
+                  target="_blank"
+                  className="flex flex-col items-center"
+                >
+                  <Twitter className="h-12 w-12 text-blue-400 mb-3" />
+                  <span className="font-semibold">Twitter</span>
+                  <span className="text-sm text-gray-400">Live Updates</span>
+                </Link>
+              </motion.a>
+
+              <motion.a
+                href="#"
+                className="flex flex-col items-center p-6 bg-gray-800 hover:bg-gray-700 transition-colors"
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <Link
+                  href="https://www.instagram.com/thousandmadleenstogaza/?utm_source=ig_web_button_share_sheet"
+                  target="_blank"
+                  className="flex flex-col items-center"
+                >
+                  <Instagram className="h-12 w-12 text-pink-400 mb-3" />
+                  <span className="font-semibold">Instagram</span>
+                  <span className="text-sm text-gray-400">Behind Scenes</span>
+                </Link>
+              </motion.a>
+
+              <motion.a
+                href="#"
+                className="flex flex-col items-center p-6 bg-gray-800 hover:bg-gray-700 transition-colors"
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <Youtube className="h-12 w-12 text-red-400 mb-3" />
+                <span className="font-semibold">YouTube</span>
+                <span className="text-sm text-gray-400">Documentaries</span>
+              </motion.a>
+            </div>
+
+            <div className="bg-gray-800 p-6">
+              <h3 className="text-xl font-bold mb-4">Share Our Mission</h3>
+              <div className="bg-gray-700 p-4 mb-4">
+                <p className="text-sm text-gray-300 italic">
+                  "Join the historic #1000MadleensToGaza flotilla! 🚢 Breaking
+                  the blockade through peaceful solidarity. Together we sail for
+                  justice and human rights. #FreePalestine #BreakTheBlockade"
+                </p>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                <Button className="bg-green-600 hover:bg-green-700">
+                  <Share2 className="mr-2 h-4 w-4" />
+                  Copy Message
+                </Button>
+                <Button
+                  variant="outline"
+                  className="border-white text-white hover:bg-white hover:text-black bg-transparent"
+                >
+                  <ExternalLink className="mr-2 h-4 w-4" />
+                  Download Graphics
+                </Button>
               </div>
             </div>
           </motion.div>
