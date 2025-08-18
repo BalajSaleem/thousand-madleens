@@ -18,6 +18,8 @@ const locations = [
     lat: 50.8198,
     lng: -1.088,
     color: "red",
+    joinLink:
+      "https://linktr.ee/thousand.madleens?lt_utm_source=lt_share_link#483563866",
   },
   {
     id: 2,
@@ -28,6 +30,7 @@ const locations = [
     lat: 43.2965,
     lng: 5.3698,
     color: "green",
+    joinLink: "https://thousandmadleens.fr/",
   },
   {
     id: 3,
@@ -38,6 +41,8 @@ const locations = [
     lat: 3.0044,
     lng: 101.3997,
     color: "black",
+    joinLink:
+      "https://linktr.ee/thousand.madleens?lt_utm_source=lt_share_link#483563866",
   },
   {
     id: 4,
@@ -48,6 +53,8 @@ const locations = [
     lat: 41.0082,
     lng: 28.9784,
     color: "red",
+    joinLink:
+      "https://linktr.ee/thousand.madleens?lt_utm_source=lt_share_link#483563866",
   },
   {
     id: 5,
@@ -58,6 +65,8 @@ const locations = [
     lat: 41.3851,
     lng: 2.1734,
     color: "green",
+    joinLink:
+      "https://linktr.ee/thousand.madleens?lt_utm_source=lt_share_link#483563866",
   },
   {
     id: 6,
@@ -68,6 +77,8 @@ const locations = [
     lat: 59.9139,
     lng: 10.7522,
     color: "black",
+    joinLink:
+      "https://linktr.ee/thousand.madleens?lt_utm_source=lt_share_link#483563866",
   },
 ];
 
@@ -130,19 +141,6 @@ export default function InteractiveMap() {
               <CardContent className="px-2 sm:px-4 lg:px-6 pb-2 sm:pb-4 lg:pb-6">
                 <div className="space-y-1 sm:space-y-2 lg:space-y-3 text-xs sm:text-sm">
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-600 flex items-center text-xs sm:text-sm">
-                      <Ship className="h-2.5 w-2.5 sm:h-3 sm:w-3 mr-1" />
-                      Ships:
-                    </span>
-                    <span
-                      className={`font-bold text-sm sm:text-base lg:text-lg text-${
-                        location.color === "black" ? "gray-800" : location.color
-                      }-600`}
-                    >
-                      {location.ships}
-                    </span>
-                  </div>
-                  <div className="flex justify-between items-center">
                     <span className="text-gray-600 text-xs sm:text-sm">
                       Status:
                     </span>
@@ -167,21 +165,23 @@ export default function InteractiveMap() {
                         <p>• Legal compliance</p>
                         <p>• Media support</p>
                       </div>
-                      <Button
-                        size="sm"
-                        className={`w-full mt-1.5 sm:mt-2 lg:mt-3 text-xs lg:text-sm bg-${
-                          location.color === "black"
-                            ? "gray-800"
-                            : location.color
-                        }-600 hover:bg-${
-                          location.color === "black"
-                            ? "gray-700"
-                            : location.color
-                        }-700 text-white py-1.5 sm:py-2`}
-                      >
-                        <Ship className="mr-1 h-2.5 w-2.5 sm:h-3 sm:w-3" />
-                        Join Fleet
-                      </Button>
+                      <Link href={location.joinLink} target="_blank">
+                        <Button
+                          size="sm"
+                          className={`w-full mt-1.5 sm:mt-2 lg:mt-3 text-xs lg:text-sm bg-${
+                            location.color === "black"
+                              ? "gray-800"
+                              : location.color
+                          }-600 hover:bg-${
+                            location.color === "black"
+                              ? "gray-700"
+                              : location.color
+                          }-700 text-white py-1.5 sm:py-2`}
+                        >
+                          <Ship className="mr-1 h-2.5 w-2.5 sm:h-3 sm:w-3" />
+                          Join Fleet
+                        </Button>
+                      </Link>
                     </motion.div>
                   )}
                 </div>
