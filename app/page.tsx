@@ -1,24 +1,25 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Button } from '@/components/ui/button';
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+} from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from '@/components/ui/accordion';
-import InteractiveMap from '@/components/interactive-map';
-import NewsCarousel from '@/components/news-carousel';
+} from "@/components/ui/accordion";
+import InteractiveMap from "@/components/interactive-map";
+import LiveTracker from "@/components/live-tracker";
+import NewsCarousel from "@/components/news-carousel";
 import {
   Ship,
   Heart,
@@ -35,11 +36,11 @@ import {
   MessageSquare,
   AlertTriangle,
   Clipboard,
-} from 'lucide-react';
-import Link from 'next/link';
-import { RiTiktokLine, RiTelegram2Line } from 'react-icons/ri';
-import { toast } from 'sonner';
-import content from '../content.json';
+} from "lucide-react";
+import Link from "next/link";
+import { RiTiktokLine, RiTelegram2Line } from "react-icons/ri";
+import { toast } from "sonner";
+import content from "../content.json";
 
 // Icon mapping for dynamic icon rendering
 const iconMap = {
@@ -63,7 +64,7 @@ const iconMap = {
 };
 
 export default function MadleensGazaLanding() {
-  const [activeRole, setActiveRole] = useState('sailors');
+  const [activeRole, setActiveRole] = useState("sailors");
   const campaignMessage = content.site.campaignMessage;
 
   return (
@@ -158,12 +159,12 @@ export default function MadleensGazaLanding() {
                       <Button
                         size="lg"
                         className={
-                          button.style === 'primary'
-                            ? 'bg-green-600 hover:bg-green-700 text-white px-8 py-4'
-                            : 'border-white text-white hover:bg-white hover:text-black bg-transparent px-8 py-4'
+                          button.style === "primary"
+                            ? "bg-green-600 hover:bg-green-700 text-white px-8 py-4"
+                            : "border-white text-white hover:bg-white hover:text-black bg-transparent px-8 py-4"
                         }
                         variant={
-                          button.style === 'outline' ? 'outline' : 'default'
+                          button.style === "outline" ? "outline" : "default"
                         }
                       >
                         <IconComponent className="mr-2 h-5 w-5" />
@@ -249,7 +250,7 @@ export default function MadleensGazaLanding() {
                     key={index}
                     className="text-center"
                     whileHover={{ scale: 1.05 }}
-                    transition={{ type: 'spring', stiffness: 300 }}
+                    transition={{ type: "spring", stiffness: 300 }}
                   >
                     <div className="flex items-center justify-center mx-auto mb-6">
                       <IconComponent className="h-16 w-16 text-green-600" />
@@ -331,6 +332,9 @@ export default function MadleensGazaLanding() {
         </div>
       </section>
 
+      {/* Live Tracker Section */}
+      <LiveTracker />
+
       {/* Voice/Advocacy */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -368,12 +372,12 @@ export default function MadleensGazaLanding() {
                         <Button
                           key={buttonIndex}
                           className={
-                            button.style === 'primary'
-                              ? 'w-full bg-green-600 hover:bg-green-700'
-                              : 'w-full bg-transparent'
+                            button.style === "primary"
+                              ? "w-full bg-green-600 hover:bg-green-700"
+                              : "w-full bg-transparent"
                           }
                           variant={
-                            button.style === 'outline' ? 'outline' : 'default'
+                            button.style === "outline" ? "outline" : "default"
                           }
                         >
                           {button.label}
@@ -436,9 +440,9 @@ export default function MadleensGazaLanding() {
                         <div className="grid md:grid-cols-2 gap-6">
                           <div>
                             <h4 className="font-semibold mb-3">
-                              {tab.id === 'citizens'
-                                ? 'How to Help:'
-                                : 'Requirements:'}
+                              {tab.id === "citizens"
+                                ? "How to Help:"
+                                : "Requirements:"}
                             </h4>
                             <ul className="space-y-2 text-gray-700">
                               {tab.requirements.map((req, index) => (
@@ -448,9 +452,9 @@ export default function MadleensGazaLanding() {
                           </div>
                           <div>
                             <h4 className="font-semibold mb-3">
-                              {tab.id === 'citizens'
-                                ? 'Impact Areas:'
-                                : 'Responsibilities:'}
+                              {tab.id === "citizens"
+                                ? "Impact Areas:"
+                                : "Responsibilities:"}
                             </h4>
                             <ul className="space-y-2 text-gray-700">
                               {tab.responsibilities.map((resp, index) => (
@@ -534,7 +538,7 @@ export default function MadleensGazaLanding() {
                     target="_blank"
                     className="flex flex-col items-center p-2 sm:p-4 lg:p-6 bg-gray-800 hover:bg-gray-700 transition-colors"
                     whileHover={{ scale: 1.05 }}
-                    transition={{ type: 'spring', stiffness: 300 }}
+                    transition={{ type: "spring", stiffness: 300 }}
                   >
                     <IconComponent
                       className={`h-6 w-6 sm:h-8 sm:w-8 lg:h-12 lg:w-12 ${platform.color} mb-1 sm:mb-2 lg:mb-3`}
@@ -568,7 +572,7 @@ export default function MadleensGazaLanding() {
                     const IconComponent =
                       iconMap[button.icon as keyof typeof iconMap];
 
-                    if (button.action === 'copy') {
+                    if (button.action === "copy") {
                       return (
                         <Button
                           key={index}
@@ -577,7 +581,7 @@ export default function MadleensGazaLanding() {
                             await navigator.clipboard.writeText(
                               campaignMessage
                             );
-                            toast.success('Message copied to clipboard!');
+                            toast.success("Message copied to clipboard!");
                           }}
                         >
                           <IconComponent className="mr-1 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4" />
@@ -589,7 +593,7 @@ export default function MadleensGazaLanding() {
                       );
                     }
 
-                    if (button.action === 'email') {
+                    if (button.action === "email") {
                       return (
                         <Button
                           key={index}
@@ -597,7 +601,7 @@ export default function MadleensGazaLanding() {
                           className="border-white text-white hover:bg-white hover:text-black bg-transparent text-xs sm:text-sm px-3 py-2"
                           onClick={() => {
                             const subject = encodeURIComponent(
-                              'Join the 1000 Madleens to Gaza Campaign'
+                              "Join the 1000 Madleens to Gaza Campaign"
                             );
                             const body = encodeURIComponent(
                               `${campaignMessage}\n\nLearn more and get involved: ${window.location.href}`
@@ -605,7 +609,7 @@ export default function MadleensGazaLanding() {
                             window.open(
                               `mailto:?subject=${subject}&body=${body}`
                             );
-                            toast.info('Email client opened');
+                            toast.info("Email client opened");
                           }}
                         >
                           <IconComponent className="mr-1 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4" />
@@ -710,7 +714,7 @@ export default function MadleensGazaLanding() {
                       <a
                         href={link.href}
                         target={
-                          link.href.startsWith('http') ? '_blank' : undefined
+                          link.href.startsWith("http") ? "_blank" : undefined
                         }
                         className="hover:text-green-400 transition-colors"
                       >
@@ -754,7 +758,7 @@ export default function MadleensGazaLanding() {
                   >
                     {link.label}
                   </a>
-                  {index < content.footer.copyright.links.length - 1 && ' |'}
+                  {index < content.footer.copyright.links.length - 1 && " |"}
                 </span>
               ))}
             </p>

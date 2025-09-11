@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import {
   MapPin,
   Globe,
@@ -13,9 +13,9 @@ import {
   ChevronLeft,
   ChevronRight,
   Clock,
-} from 'lucide-react';
-import Link from 'next/link';
-import content from '../content.json';
+} from "lucide-react";
+import Link from "next/link";
+import content from "../content.json";
 
 // Icon mapping for dynamic icon rendering
 const iconMap = {
@@ -133,7 +133,7 @@ export default function NewsCarousel() {
               onClick={() => setIsPaused(!isPaused)}
               className="text-gray-600 hover:text-green-600 hover:bg-green-50"
             >
-              {isPaused ? 'Resume Auto-Switch' : 'Pause Auto-Switch'}
+              {isPaused ? "Resume Auto-Switch" : "Pause Auto-Switch"}
             </Button>
           </div>
 
@@ -149,13 +149,13 @@ export default function NewsCarousel() {
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -50 }}
-                transition={{ duration: 0.5, ease: 'easeInOut' }}
+                transition={{ duration: 0.5, ease: "easeInOut" }}
                 className="grid grid-cols-1 gap-4 md:gap-6 max-w-4xl mx-auto"
               >
                 {getCurrentArticles().map((article, index) => {
                   const SourceIcon =
                     iconMap[article.sourceIcon as keyof typeof iconMap];
-                  const isExternal = article.link.startsWith('http');
+                  const isExternal = article.link.startsWith("http");
 
                   return (
                     <motion.div
@@ -247,8 +247,8 @@ export default function NewsCarousel() {
                 }}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
                   index === currentSet
-                    ? 'bg-green-600 scale-125'
-                    : 'bg-gray-300 hover:bg-gray-400'
+                    ? "bg-green-600 scale-125"
+                    : "bg-gray-300 hover:bg-gray-400"
                 }`}
               />
             ))}
