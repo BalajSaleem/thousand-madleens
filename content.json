@@ -51,7 +51,7 @@
       "alt": "Sailboat with Palestinian flag sailing on the Mediterranean Sea - Thousand Madleens to Gaza campaign"
     },
     "title": "Thousand Madleens to Gaza",
-    "subtitle": "Breaking the Israeli Blockage",
+    "subtitle": "Breaking the Israeli Blockade",
     "tagline": "1000 Ships. One Mission. Free Gaza.",
     "description": "A global maritime flotilla campaign to break the blockade of Gaza through peaceful solidarity. Inspired by resilience, driven by hope, united in action.",
     "buttons": [
@@ -198,6 +198,32 @@
         "links": {
           "instagram": "https://www.instagram.com/thousandmadleens.usa",
           "linktree": "https://linktr.ee/thousand.madleens"
+        }
+      },
+      {
+        "id": 11,
+        "country": "Turkey",
+        "flag": "🇹🇷",
+        "links": {
+          "instagram": "https://www.instagram.com/thousandmadleens.turkiye"
+        }
+      },
+      {
+        "id": 12,
+        "country": "Australia",
+        "flag": "🇦🇺",
+        "links": {
+          "instagram": "https://www.instagram.com/thousand.madleens.australia",
+          "linktree": "https://linktr.ee/thousand.madleens.aus"
+        }
+      },
+      {
+        "id": 13,
+        "country": "Tunisia",
+        "flag": "🇹🇳",
+        "links": {
+          "instagram": "https://www.instagram.com/thousand.madleens.tunisia",
+          "linktree": "https://linktr.ee/thousand.madleens.tunisia"
         }
       }
     ],
