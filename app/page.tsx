@@ -20,6 +20,7 @@ import {
 import InteractiveMap from "@/components/interactive-map";
 import LiveTracker from "@/components/live-tracker";
 import NewsCarousel from "@/components/news-carousel";
+import PressRelease from "@/components/press-release";
 import {
   Ship,
   Heart,
@@ -506,6 +507,9 @@ export default function MadleensGazaLanding() {
           </motion.div>
         </div>
       </section>
+
+      {/* Press Release Section */}
+      <PressRelease />
 
       {/* News Section */}
       <NewsCarousel />

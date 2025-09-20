@@ -19,6 +19,10 @@
         "href": "#goals"
       },
       {
+        "label": "Press Release",
+        "href": "#press-release"
+      },
+      {
         "label": "Get Involved",
         "href": "#get-involved"
       },
@@ -219,6 +223,15 @@
       },
       {
         "id": 13,
+        "country": "Switzerland",
+        "flag": "🇨🇭",
+        "links": {
+          "instagram": "https://www.instagram.com/thousandmadleens.switzerland/",
+          "linktree": "https://tr.ee/iGS9dmqtPV"
+        }
+      },
+      {
+        "id": 14,
         "country": "Tunisia",
         "flag": "🇹🇳",
         "links": {
@@ -413,12 +426,95 @@
       }
     ]
   },
+  "pressRelease": {
+    "title": "Official Press Release",
+    "subtitle": "Freedom Flotilla Coalition & Thousand Madleens to Gaza Unite",
+    "date": "September 16, 2025",
+    "announcement": {
+      "title": "Freedom Flotilla Coalition & Thousand Madleens to Gaza unite to sail for Gaza on September 24th",
+      "launchDate": "September 24th, 2025",
+      "location": "Catania",
+      "description": "Two initiatives, one flotilla, one mission. The Freedom Flotilla Coalition (FFC) and Thousand Madleens to Gaza (TMTG) are joining forces as one flotilla to challenge Israel's illegal and deadly siege of Gaza.",
+      "sections": [
+        {
+          "title": "Two initiatives, one flotilla, one mission",
+          "content": "The Freedom Flotilla Coalition (FFC) and Thousand Madleens to Gaza (TMTG) are joining forces as one flotilla to challenge Israel's illegal and deadly siege of Gaza. This alliance unites two global, people-led initiatives in a shared commitment to justice and solidarity with the Palestinian people."
+        },
+        {
+          "title": "",
+          "content": "On September 24th, 2025, we will launch the next wave of civilian ships to Gaza from Catania following the first boats of the Global Sumud Flotilla now en route to Palestine's shores. It continues a legacy of resistance that began with the Free Gaza Movement in 2008 and FFC's missions since 2010. We sail because world powers enable Israel's illegal siege. We sail to break it, to defy complicity, and to affirm the rights of Palestinians in Gaza."
+        },
+        {
+          "title": "Why this alliance matters",
+          "content": "This partnership is rooted in years of experience and grassroots organizing. By consolidating maritime safety, legal defence, and communications, we strengthen coordination, safety, messaging, and global impact to confront what governments, corporations and institutions have abandoned—to stop genocide, resist apartheid and demand accountability under international law. We sail because silence is betrayal. We sail because Gaza must live. We sail because Palestine must be free!"
+        },
+        {
+          "title": "Why now",
+          "content": "Israel's illegal siege of Gaza is both a humanitarian emergency and a political crime. Gaza is being annihilated, and her people deliberately starved, bombed, and erased by Israel and their allies. Children are dying of hunger and disease, denied food, clean water, medicine, and the basic right to live with dignity."
+        },
+        {
+          "title": "",
+          "content": "Since October 2023, Israel's genocidal assault has turned an already suffocating illegal blockade into a catastrophe. Yet our governments continue to arm, fund, and profit from this horror. We cannot wait for permission. We cannot wait for leaders who have chosen complicity over humanity. The urgency demands not one ship, but waves of ships."
+        },
+        {
+          "title": "",
+          "content": "Israel's recent armed attacks on the FFC's vessels—Conscience, Madleen, and Handala—ignited a worldwide response. Dozens of boats from across the globe have since joined the Global Sumud Flotilla, proving that the demand to break Israel's illegal siege on Gaza cannot be silenced or deterred."
+        }
+      ],
+      "fullContent": [
+        "The Freedom Flotilla Coalition (FFC) and Thousand Madleens to Gaza (TMTG) are joining forces as one flotilla to challenge Israel's illegal and deadly siege of Gaza. This alliance unites two global, people-led initiatives in a shared commitment to justice and solidarity with the Palestinian people.",
+        "On September 24th, 2025, we will launch the next wave of civilian ships to Gaza from Catania following the first boats of the Global Sumud Flotilla now en route to Palestine's shores. It continues a legacy of resistance that began with the Free Gaza Movement in 2008 and FFC's missions since 2010. We sail because world powers enable Israel's illegal siege. We sail to break it, to defy complicity, and to affirm the rights of Palestinians in Gaza.",
+        "This partnership is rooted in years of experience and grassroots organizing. By consolidating maritime safety, legal defence, and communications, we strengthen coordination, safety, messaging, and global impact to confront what governments, corporations and institutions have abandoned—to stop genocide, resist apartheid and demand accountability under international law. We sail because silence is betrayal. We sail because Gaza must live. We sail because Palestine must be free!",
+        "Israel's illegal siege of Gaza is both a humanitarian emergency and a political crime. Gaza is being annihilated, and her people deliberately starved, bombed, and erased by Israel and their allies. Children are dying of hunger and disease, denied food, clean water, medicine, and the basic right to live with dignity.",
+        "Since October 2023, Israel's genocidal assault has turned an already suffocating illegal blockade into a catastrophe. Yet our governments continue to arm, fund, and profit from this horror. We cannot wait for permission. We cannot wait for leaders who have chosen complicity over humanity. The urgency demands not one ship, but waves of ships.",
+        "Israel's recent armed attacks on the FFC's vessels—Conscience, Madleen, and Handala—ignited a worldwide response. Dozens of boats from across the globe have since joined the Global Sumud Flotilla, proving that the demand to break Israel's illegal siege on Gaza cannot be silenced or deterred."
+      ],
+      "mediaContacts": [
+        {
+          "name": "Hay Sha Wiya",
+          "email": "media@freedomflotilla.org",
+          "phone": "+1 2108348155",
+          "organization": "Freedom Flotilla Coalition"
+        },
+        {
+          "name": "Myriam & Sarah",
+          "email": "thousand.madleens@proton.me",
+          "organization": "Thousand Madleens to Gaza"
+        }
+      ],
+      "websites": [
+        "https://freedomflotilla.org",
+        "https://www.thousandmadleens.org/"
+      ],
+      "callToAction": "We invite media to attend our launch event in Catania prior to the launch date to give ample time for interviews. Please contact media@freedomflotilla.org or thousand.madleens@proton.me",
+      "keyMessages": [
+        "We sail because silence is betrayal",
+        "We sail because Gaza must live",
+        "We sail because Palestine must be free"
+      ]
+    }
+  },
   "news": {
     "title": "Latest News",
     "description": "Stay updated with the latest developments in our mission to Gaza",
     "articles": [
       {
         "id": 1,
+        "title": "Freedom Flotilla Coalition & Thousand Madleens to Gaza Unite for September 24th Launch",
+        "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=480&q=80",
+        "description": "Historic alliance announced as FFC and TMTG join forces for a unified flotilla launching September 24th, 2025 from Catania. Two global initiatives unite with one mission: to challenge Israel's illegal siege of Gaza through coordinated maritime resistance.",
+        "source": "Press Release",
+        "sourceIcon": "Globe",
+        "badge": "Breaking News",
+        "badgeColor": "bg-red-600",
+        "borderColor": "border-red-200",
+        "buttonColor": "border-red-600 text-red-600 hover:bg-red-50",
+        "link": "#",
+        "date": "September 16, 2025",
+        "featured": true
+      },
+      {
+        "id": 2,
         "title": "THE 1000 FLOTILLA INITIATIVE TO BREAK THE SIEGE",
         "image": "https://mapim.org.my/wp-content/uploads/2025/06/THE-1000-FLOTILLA-INITIATIVE-TO-BREAK-THE-SIEGE-1200x480.png",
         "description": "A comprehensive look at the ambitious campaign to organize 1000 ships from around the world in solidarity with Gaza, breaking the blockade through peaceful maritime resistance.",
