@@ -500,34 +500,49 @@
     "articles": [
       {
         "id": 1,
-        "title": "Freedom Flotilla Coalition & Thousand Madleens to Gaza Unite for September 24th Launch",
-        "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=480&q=80",
-        "description": "Historic alliance announced as FFC and TMTG join forces for a unified flotilla launching September 24th, 2025 from Catania. Two global initiatives unite with one mission: to challenge Israel's illegal siege of Gaza through coordinated maritime resistance.",
-        "source": "Press Release",
+        "title": "Gaza-Bound Flotilla Grows to 40 Vessels After Joining Sicilian Group",
+        "image": "https://s.yimg.com/ny/api/res/1.2/.qL7_F2Do7bKaVkbM.evLg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtoPTYyODtjZj13ZWJw/https://media.zenfs.com/en/jerusalem_post_articles_818/9109a151c93da34fb41a3d557ae9bbc4",
+        "description": "The Global Sumud Flotilla expands dramatically as vessels from Spain merge with Sicilian contingent, creating an armada of 40 ships now 1,000 miles from Gaza. Despite facing drone threats and challenging conditions, the international fleet remains determined to break the blockade.",
+        "source": "Jerusalem Post",
         "sourceIcon": "Globe",
         "badge": "Breaking News",
         "badgeColor": "bg-red-600",
         "borderColor": "border-red-200",
         "buttonColor": "border-red-600 text-red-600 hover:bg-red-50",
-        "link": "#",
-        "date": "September 16, 2025",
+        "link": "https://www.yahoo.com/news/articles/gaza-bound-flotilla-grows-40-181219779.html",
+        "date": "September 20, 2025",
         "featured": true
       },
       {
         "id": 2,
+        "title": "Freedom Flotilla Coalition & Thousand Madleens to Gaza Unite for September 24th Launch",
+        "image": "https://images.jpost.com/image/upload/f_auto,fl_lossy/c_fill,g_faces:center,h_537,w_822/681934",
+        "description": "Historic alliance announced as FFC and TMTG join forces for a unified flotilla launching September 24th, 2025 from Catania. Two global initiatives unite with one mission: to challenge Israel's illegal siege of Gaza through coordinated maritime resistance.",
+        "source": "Press Release",
+        "sourceIcon": "Globe",
+        "badge": "Major Announcement",
+        "badgeColor": "bg-orange-600",
+        "borderColor": "border-orange-200",
+        "buttonColor": "border-orange-600 text-orange-600 hover:bg-orange-50",
+        "link": "https://www.jpost.com/middle-east/article-868156",
+        "date": "September 16, 2025",
+        "featured": false
+      },
+      {
+        "id": 3,
         "title": "THE 1000 FLOTILLA INITIATIVE TO BREAK THE SIEGE",
         "image": "https://mapim.org.my/wp-content/uploads/2025/06/THE-1000-FLOTILLA-INITIATIVE-TO-BREAK-THE-SIEGE-1200x480.png",
         "description": "A comprehensive look at the ambitious campaign to organize 1000 ships from around the world in solidarity with Gaza, breaking the blockade through peaceful maritime resistance.",
         "source": "MAPIM",
         "sourceIcon": "MapPin",
-        "badge": "Breaking News",
+        "badge": "Featured",
         "badgeColor": "bg-green-600",
         "borderColor": "border-green-200",
         "buttonColor": "border-green-600 text-green-600 hover:bg-green-50",
         "link": "https://mapim.org.my/2025/06/13/the-1000-flotilla-initiative-to-break-the-siege/"
       },
       {
-        "id": 2,
+        "id": 4,
         "title": "A Thousand Madleens: New Civilian Fleet Readies to Defy Israeli Blockade",
         "image": "https://qudsnen.co/wp-content/uploads/2025/06/IMG_5537-780x432.jpeg",
         "description": "International civil society prepares an unprecedented maritime flotilla as civilians worldwide unite to challenge the blockade of Gaza through coordinated peaceful action.",
@@ -540,7 +555,7 @@
         "link": "https://qudsnen.co/a-thousand-madleens-new-civilian-fleet-readies-to-defy-israeli-blockade/"
       },
       {
-        "id": 3,
+        "id": 5,
         "title": "Swindon Fete to Fund Aid Volunteer's Gaza Flotilla Journey",
         "image": "https://unsplash.com/photos/D9lCSvUcErk/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzU1MzUxMDk5fA&force=true&w=640",
         "description": "A summer fete by Swindon Palestine Solidarity aims to raise funds for volunteer Liaquth Ali's participation in the 'A Thousand Madleens to Gaza' flotilla, featuring family-friendly activities and cultural events.",
@@ -553,7 +568,7 @@
         "link": "#"
       },
       {
-        "id": 4,
+        "id": 6,
         "title": "Flotilla for Palestine: Support Center for Gaza Opens in Nice",
         "image": "https://www.nice-premium.com/wp-content/uploads/2025/08/image-57-1068x601.jpg",
         "description": "Thousand Madleens Nice opens its doors as a support center following the return of the Madleen crew and Soumoud caravan, establishing a base for raising awareness about the Gaza flotilla movement.",
@@ -566,7 +581,7 @@
         "link": "#"
       },
       {
-        "id": 5,
+        "id": 7,
         "title": "'Thousand Ship Flotilla' Announced to Challenge Israel's Gaza Blockade",
         "image": "https://i0.wp.com/www.middleeastmonitor.com/wp-content/uploads/2025/06/GettyImages-2218796600.jpg?fit=920%2C613&ssl=1",
         "description": "Malaysian civil society coalition led by MAPIM announces the largest maritime mobilization of its kind, aiming to send vessels from across the globe carrying humanitarian aid to Gaza in defiance of Israel's naval embargo.",
@@ -577,6 +592,36 @@
         "borderColor": "border-red-200",
         "buttonColor": "border-red-600 text-red-600 hover:bg-red-50",
         "link": "#"
+      },
+      {
+        "id": 8,
+        "title": "8 US Veterans Join Gaza-Bound Flotilla in Protest of Complicity in Israel's Genocidal War",
+        "image": "https://cdnuploads.aa.com.tr/uploads/Contents/2025/09/18/thumbs_b_c_368eab71648174d3df73ec1d60176d02.jpg?v=110030",
+        "description": "Eight US military veterans have joined the Global Sumud Flotilla in a powerful act of conscience, defying the same war machine they once served. Their participation highlights growing American opposition to US complicity in Israel's war on Gaza, as they sail with a clear message: 'End genocide, end complicity, and free Palestine.'",
+        "source": "Anadolu Agency",
+        "sourceIcon": "Globe",
+        "badge": "Breaking News",
+        "badgeColor": "bg-red-600",
+        "borderColor": "border-red-200",
+        "buttonColor": "border-red-600 text-red-600 hover:bg-red-50",
+        "link": "https://www.aa.com.tr/en/world/8-us-veterans-join-gaza-bound-flotilla-in-protest-of-complicity-in-israel-s-genocidal-war/3691060",
+        "date": "September 18, 2025",
+        "featured": true
+      },
+      {
+        "id": 9,
+        "title": "13th Maghreb Sumud Flotilla Ship Sets Sail from Tunisia Toward Gaza",
+        "image": "https://cdnuploads.aa.com.tr/uploads/Contents/2025/09/18/thumbs_b_c_04a2d886b996ee0a71d144e7c2b06e9c.jpg?v=083259",
+        "description": "The 13th ship from the Maghreb Sumud Flotilla departed Gammarth port north of Tunis as part of the larger Global Sumud Flotilla. With dozens of Tunisians gathered to see it off, the vessel joins 12 other ships already en route to Gaza, while Greek vessels prepare to unite with the solidarity fleet challenging Israel's 18-year blockade.",
+        "source": "Anadolu Agency",
+        "sourceIcon": "Globe",
+        "badge": "Fleet Update",
+        "badgeColor": "bg-blue-600",
+        "borderColor": "border-blue-200",
+        "buttonColor": "border-blue-600 text-blue-600 hover:bg-blue-50",
+        "link": "https://www.aa.com.tr/en/middle-east/13th-maghreb-sumud-flotilla-ship-sets-sail-from-tunisia-toward-gaza/3690938",
+        "date": "September 18, 2025",
+        "featured": false
       }
     ]
   },

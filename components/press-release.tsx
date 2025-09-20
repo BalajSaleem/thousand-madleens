@@ -3,49 +3,22 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
-  Calendar,
-  MapPin,
   Globe,
   Mail,
   Phone,
   ChevronDown,
   ChevronUp,
   ExternalLink,
-  Download,
-  Share2,
-  Copy,
-  Check,
 } from "lucide-react";
 import Link from "next/link";
 import content from "../content.json";
 
 export default function PressRelease() {
   const [isExpanded, setIsExpanded] = useState(false);
-  const [isCopied, setIsCopied] = useState(false);
   const { pressRelease } = content;
-
-  const handleShare = async () => {
-    const shareText = `${pressRelease.announcement.title}\n\n${pressRelease.announcement.description}\n\nRead more: ${window.location.origin}`;
-
-    if (navigator.share) {
-      try {
-        await navigator.share({
-          title: pressRelease.announcement.title,
-          text: pressRelease.announcement.description,
-          url: window.location.origin,
-        });
-      } catch (err) {
-        console.log("Error sharing:", err);
-      }
-    } else {
-      await navigator.clipboard.writeText(shareText);
-      setIsCopied(true);
-      setTimeout(() => setIsCopied(false), 2000);
-    }
-  };
 
   return (
     <section
