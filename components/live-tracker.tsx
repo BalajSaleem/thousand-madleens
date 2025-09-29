@@ -79,7 +79,7 @@ export default function LiveTracker() {
                 <div className="space-y-6">
                   {/* Call to Action Button */}
                   <Link
-                    href="https://globalsumudflotilla.org/tracker/"
+                    href="https://thousandmadleens.fr/tracker/"
                     target="_blank"
                     className="inline-block"
                   >
