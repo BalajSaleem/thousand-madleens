@@ -44,7 +44,7 @@
       },
       {
         "label": "Donate",
-        "href": "https://chuffed.org/project/138012-a-thousand-madleens-to-gaza",
+        "href": "https://chuffed.org/project/138929-thousand-madleens-to-gaza-delegation-francaise",
         "style": "primary"
       }
     ]
@@ -61,7 +61,7 @@
     "buttons": [
       {
         "label": "Support the Mission",
-        "href": "https://chuffed.org/project/138012-a-thousand-madleens-to-gaza",
+        "href": "https://chuffed.org/project/138929-thousand-madleens-to-gaza-delegation-francaise",
         "icon": "HandHeart",
         "style": "primary"
       },
@@ -742,7 +742,7 @@
         "links": [
           {
             "label": "Donate",
-            "href": "https://chuffed.org/project/138012-a-thousand-madleens-to-gaza"
+            "href": "https://chuffed.org/project/138929-thousand-madleens-to-gaza-delegation-francaise"
           },
           {
             "label": "Join Movement",
